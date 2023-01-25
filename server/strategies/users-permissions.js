@@ -11,9 +11,11 @@ const getAdvancedSettings = () => {
 
 const authenticate = async (ctx) => {
   try {
+    console.log(ctx);
     const token = await getService('jwt').getToken(ctx);
 
     if (token) {
+      
       const { id } = token;
 
       // Invalid token
